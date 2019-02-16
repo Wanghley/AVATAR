@@ -62,9 +62,6 @@ void loop()
   if (radio.available())
   {
     bool done = false;    
-    while (!done)
-    {
-      done = radio.read(recebidos, 1);
       switch(recebidos[0]){
         case 1:
           delay(5);
@@ -87,7 +84,7 @@ void loop()
           TurnOFF();
           break;
       }
-  }}
+  }
 }
 void TurnOFF(){
   analogWrite(enA,0);
